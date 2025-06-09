@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/primary_light"
+    android:alpha="0.9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutTidHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="14dp"
+            android:background="@drawable/ripple_effect"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvTid"
+                style="@style/BodyTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_dark"
+                tools:text="Tid: 123456797" />
+
+            <ImageView
+                android:id="@+id/ivTidExpand"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="Expand/Collapse"
+                android:src="@drawable/ic_expand_more"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="3dp"
+                app:tint="@color/primary_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutEntries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:background="@color/surface"
+            tools:visibility="visible">
+            
+            <!-- Entries will be added here programmatically -->
+            
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
