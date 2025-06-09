@@ -18,10 +18,10 @@ MintoakLedger is a modern Android application built with Kotlin, designed to pro
 
 <div align="center">
   <div style="display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-    <img src="screenshots/screen1.jpg" width="1080" alt="Home Screen"/>
-    <img src="screenshots/screen2.jpg" width="1080" alt="Ledger Details"/>
-    <img src="screenshots/screen3.jpg" width="1080" alt="Ledger Details"/>
-    <img src="screenshots/screen4.jpg" width="1080" alt="Ledger Details"/>
+    <img src="screenshots/screen1.jpg" width="200" alt="Home Screen"/>
+    <img src="screenshots/screen2.jpg" width="200" alt="Ledger Details"/>
+    <img src="screenshots/screen3.jpg" width="200" alt="Ledger Details"/>
+    <img src="screenshots/screen4.jpg" width="200" alt="Ledger Details"/>
   </div>
 </div>
 
