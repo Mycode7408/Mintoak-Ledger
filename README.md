@@ -7,7 +7,6 @@
 [![Gradle Version](https://img.shields.io/badge/Gradle-8.2-blue.svg)](https://gradle.org)
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](https://developer.android.com)
 [![TargetSDK](https://img.shields.io/badge/TargetSDK-34-orange.svg)](https://developer.android.com)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
 
@@ -43,20 +42,15 @@ MintoakLedger is a modern Android application built with Kotlin, designed to pro
 ## Project Structure
 
 ```
-app/
-├── src/
-│   ├── main/
-│   │   ├── java/com/mahmood/mintoakledger/
-│   │   │   ├── data/           # Data layer (repositories, data sources)
-│   │   │   ├── di/            # Dependency injection
-│   │   │   ├── domain/        # Business logic and models
-│   │   │   ├── ui/            # UI layer (activities, fragments, adapters)
-│   │   │   ├── utils/         # Utility classes
-│   │   │   └── viewmodels/    # ViewModels
-│   │   └── res/               # Resources
-│   ├── test/                  # Unit tests
-│   └── androidTest/           # Instrumentation tests
-└── build.gradle              # App level build configuration
+app/src/main/
+├── java/com/mahmood/mintoakledger/
+│   ├── data/           # Data layer
+│   ├── di/            # Dependency injection
+│   ├── domain/        # Business logic and models
+│   ├── presentation/  # UI layer
+│   ├── MainActivity.kt
+│   └── LedgerActivity.kt
+└── res/               # Resources
 ```
 
 ## Getting Started
