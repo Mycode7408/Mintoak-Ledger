@@ -23,28 +23,26 @@ class LedgerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         
-        // Initialize view binding
         binding = ActivityLedgerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        // Set up edge-to-edge display
+        setupEdgeToEdgeDisplay()
+        setupViewModel()
+        setupRecyclerView()
+        observeViewModel()
+        viewModel.loadLedgerData()
+    }
+    
+    private fun setupEdgeToEdgeDisplay() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.ledgerContainer) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        
-        // Initialize ViewModel
+    }
+    
+    private fun setupViewModel() {
         viewModel = ViewModelProvider(this, ViewModelFactory())[LedgerViewModel::class.java]
-        
-        // Set up RecyclerView
-        setupRecyclerView()
-        
-        // Observe ViewModel data
-        observeViewModel()
-        
-        // Load data
-        viewModel.loadLedgerData()
     }
     
     private fun setupRecyclerView() {
@@ -60,17 +58,15 @@ class LedgerActivity : AppCompatActivity() {
     }
     
     private fun observeViewModel() {
-        // Observe Mid items
+
         viewModel.midItems.observe(this) { midItems ->
             adapter.updateData(midItems)
         }
         
-        // Observe loading state
         viewModel.isLoading.observe(this) { isLoading ->
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         }
         
-        // Observe error state
         viewModel.error.observe(this) { errorMessage ->
             if (errorMessage != null) {
                 binding.tvError.text = errorMessage
@@ -81,10 +77,7 @@ class LedgerActivity : AppCompatActivity() {
         }
     }
     
-    /**
-     * Updates the RecyclerView when a Mid item is expanded or collapsed.
-     * This ensures the animation is applied correctly.
-     */
+
     private fun updateRecyclerViewItem(position: Int) {
         val viewHolder = binding.rvMidList.findViewHolderForAdapterPosition(position) as? MidAdapter.MidViewHolder
         viewHolder?.let {

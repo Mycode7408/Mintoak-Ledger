@@ -11,7 +11,8 @@ import kotlinx.coroutines.launch
 /**
  * ViewModel for handling the three-level hierarchical ledger data and UI logic.
  */
-class LedgerViewModel(private val getHierarchicalTransactionsUseCase: GetHierarchicalTransactionsUseCase) : ViewModel() {
+class LedgerViewModel(private val getHierarchicalTransactionsUseCase: GetHierarchicalTransactionsUseCase
+) : ViewModel() {
     
     private val _midItems = MutableLiveData<List<Mid>>()
     val midItems: LiveData<List<Mid>> = _midItems
@@ -22,9 +23,7 @@ class LedgerViewModel(private val getHierarchicalTransactionsUseCase: GetHierarc
     private val _error = MutableLiveData<String?>()
     val error: LiveData<String?> = _error
     
-    /**
-     * Loads hierarchical transaction data.
-     */
+
     fun loadLedgerData() {
         _isLoading.value = true
         _error.value = null
@@ -41,10 +40,7 @@ class LedgerViewModel(private val getHierarchicalTransactionsUseCase: GetHierarc
         }
     }
     
-    /**
-     * Toggles the expanded state of a Mid item.
-     * @param position The position of the Mid item in the list.
-     */
+
     fun toggleMidExpansion(position: Int) {
         val currentMids = _midItems.value?.toMutableList() ?: return
         if (position < 0 || position >= currentMids.size) return
@@ -56,11 +52,7 @@ class LedgerViewModel(private val getHierarchicalTransactionsUseCase: GetHierarc
         _midItems.value = currentMids
     }
     
-    /**
-     * Toggles the expanded state of a Tid item within a Mid item.
-     * @param midPosition The position of the Mid item in the list.
-     * @param tidPosition The position of the Tid item in the Mid's tidItems list.
-     */
+
     fun toggleTidExpansion(midPosition: Int, tidPosition: Int) {
         val currentMids = _midItems.value?.toMutableList() ?: return
         if (midPosition < 0 || midPosition >= currentMids.size) return

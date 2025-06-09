@@ -90,18 +90,13 @@ class TransactionRepositoryImpl : TransactionRepository {
         }
     """.trimIndent()
     
-    /**
-     * Gets all transactions from the data source.
-     * In a real app, this would fetch data from an API or database.
-     * @return List of Transaction objects.
-     */
+
     override suspend fun getTransactions(): List<Transaction> {
         // Parse the JSON data using Moshi
         val adapter = moshi.adapter(TransactionResponse::class.java)
         val response = adapter.fromJson(sampleJsonData)
             ?: throw IllegalStateException("Failed to parse JSON data")
         
-        // Add logging to verify data parsing
         println("DEBUG: Parsed ${response.sort.size} transactions")
         response.sort.forEach { transaction ->
             println("DEBUG: Transaction: mid=${transaction.mid}, tid=${transaction.tid}, amount=${transaction.amount}, narration=${transaction.narration}")
@@ -110,14 +105,10 @@ class TransactionRepositoryImpl : TransactionRepository {
         return response.sort
     }
     
-    /**
-     * Groups transactions by Mid and Tid.
-     * @return List of TransactionGroup objects.
-     */
+
     override suspend fun getGroupedTransactions(): List<TransactionGroup> {
         val transactions = getTransactions()
         
-        // Group transactions by Mid and Tid
         return transactions.groupBy { Pair(it.mid, it.tid) }
             .map { (key, transactions) ->
                 TransactionGroup(
@@ -126,6 +117,6 @@ class TransactionRepositoryImpl : TransactionRepository {
                     transactions = transactions
                 )
             }
-            .sortedBy { it.mid } // Sort by Mid
+            .sortedBy { it.mid }
     }
 }
