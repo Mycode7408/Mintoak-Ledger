@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![MintoakLedger Logo](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 
 [![Kotlin Version](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg)](https://kotlinlang.org)
 [![Gradle Version](https://img.shields.io/badge/Gradle-8.2-blue.svg)](https://gradle.org)
@@ -98,56 +97,19 @@ The project follows the official Kotlin coding conventions. Key aspects include:
 - Dependency injection best practices
 - Comprehensive documentation
 
-### Testing
 
-The project includes both unit tests and instrumentation tests:
-
-```bash
-# Run unit tests
-./gradlew test
-
-# Run instrumentation tests
-./gradlew connectedAndroidTest
-```
-
-### Build Variants
-
-- Debug: Development build with logging enabled
-- Release: Optimized build with ProGuard rules applied
 
 ## Performance Optimization
 
 - ViewBinding for efficient view access
 - Coroutines for asynchronous operations
 - Efficient data structures and algorithms
-- Memory leak prevention
-- Resource optimization
 
-## Security
-
-- Data encryption for sensitive information
-- Secure file storage
-- Input validation
-- ProGuard optimization and code obfuscation
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Android team for the comprehensive development platform
-- Kotlin team for the amazing programming language
-- Contributors and maintainers
 
 ## Contact
 
-For any inquiries, please reach out to [your-email@domain.com](mailto:your-email@domain.com)
+For any inquiries, please reach out to (mailto:mycode7408@gmail.com)
 
 ---
 
-Built with ❤️ using Kotlin and Android
+Built with ❤️ Mahmood Ahmad Khan
