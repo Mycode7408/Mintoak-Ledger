@@ -29,7 +29,6 @@ MintoakLedger is a modern Android application built with Kotlin, designed to pro
 - **Architecture**: MVVM (Model-View-ViewModel)
 - **UI Components**: Material Design 3
 - **Asynchronous Programming**: Coroutines
-- **Data Parsing**: Moshi
 - **View Binding**: Android View Binding
 - **Dependencies**:
   - AndroidX Core KTX
@@ -37,7 +36,6 @@ MintoakLedger is a modern Android application built with Kotlin, designed to pro
   - Material Design Components
   - RecyclerView & CardView
   - Kotlin Coroutines
-  - Moshi JSON Parser
 
 ## Project Structure
 
